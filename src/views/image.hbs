@@ -1,0 +1,70 @@
+<style>
+    html,
+    body {
+        position: relative;
+        height: 100%;
+    }
+
+    body {
+        background: #000;
+        font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+        font-size: 14px;
+        color: #000;
+        margin: 0;
+        padding: 0;
+    }
+
+    .swiper-container {
+        width: 100%;
+        height: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .swiper-slide {
+        background-size: cover;
+        background-position: center;
+    }
+
+    .gallery-top {
+        height: 80%;
+        width: 100%;
+    }
+
+    .gallery-thumbs {
+        height: 20%;
+        box-sizing: border-box;
+        padding: 10px 0;
+    }
+
+    .gallery-thumbs .swiper-slide {
+        height: 100%;
+        opacity: 0.4;
+    }
+
+    .gallery-thumbs .swiper-slide-thumb-active {
+        opacity: 1;
+    }
+</style>
+
+<!-- Swiper -->
+<div class="swiper-container gallery-top">
+    <div class="swiper-wrapper">
+        {{#each photos}}
+        <img src="{{ imageURL }}" class="swiper-slide img-thumbnail">
+        {{/each}}
+    </div>
+    <!-- Add Pagination 
+    <div class="swiper-pagination"></div>-->
+    <!-- Add Arrows -->
+    <div class="swiper-button-next swiper-button-white"></div>
+    <div class="swiper-button-prev swiper-button-white"></div>
+    
+    <div class="swiper-container gallery-thumbs">
+        <div class="swiper-wrapper">
+            {{#each photos}}
+            <img src="{{ imageURL }}" class="swiper-slide img-thumbnail">
+            {{/each}}
+        </div>
+    </div>
+</div>
